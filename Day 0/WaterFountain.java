@@ -1,8 +1,9 @@
 public class WaterFountain {
 
-    private double meter; // = 30965.36;
+    public double meter; // = 30965.36;
     private int numButtons; // = 3;
-    private boolean hasSensor; // = true;
+    private boolean buttonPressed;
+    private boolean sensorActivated; // = false;
     private String frame; // = "rectangular";
     private String colors; // = "grey and light blue";
     private char firstLetterOfObject; // = 'W';
@@ -10,18 +11,37 @@ public class WaterFountain {
     public WaterFountain() {
         meter = 30965.36;
         numButtons = 3;
-        hasSensor = true;
+        buttonPressed = false;
+        sensorActivated = false;
         frame = "rectangular";
         colors = "grey and light blue";
         firstLetterOfObject = 'W';
     }
 
     public void sprayWater() {
-        System.out.println("Water Sprayed");
+        if(buttonPressed = true) {
+            System.out.println("Water Sprayed");
+        }
+        meter = meter + 0.1;
     }
-
+    public void pressButton() {
+        buttonPressed = true;
+    }
+    public void unpressButton() {
+        buttonPressed = false;
+    }
+    public void activateSensor() {
+        sensorActivated = true;
+    }
+    public void deactivateSensor() {
+        sensorActivated = false;
+    }
     public void dropWater() {
-        System.out.println("Water dropped");
+        if(sensorActivated)
+        {
+            System.out.println("Water dropped");
+        }
+        meter++;
     }
 
     public void increaseMeter() {
@@ -40,9 +60,6 @@ public class WaterFountain {
         return meter;
     }
 
-    public void filter(){
-        colors = "green";
-    }
 
     // Shoot water
     // drop water

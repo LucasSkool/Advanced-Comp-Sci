@@ -6,7 +6,7 @@ public class WaterFountainTester {
     libraryWaterFountain.sprayWater();
     libraryWaterFountain.dropWater();
     libraryWaterFountain.increaseMeter();
-    System.out.println("Meter: " + libraryWaterFountain.getMeter());
+    System.out.println("Meter: " + libraryWaterFountain.meter);
 
 
     }
