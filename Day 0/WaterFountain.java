@@ -18,6 +18,13 @@ public class WaterFountain {
         firstLetterOfObject = 'W';
     }
 
+    public String toString() {
+        return "This waterfountain that starts with a " + firstLetterOfObject + 
+        " has a " + frame + " frame, " + colors + " colors, has " + numButtons + " buttons, and the current meter reading is " 
+        + meter + ". Currently, it is " + buttonPressed + " that one of the buttons are being pressed, and "
+        + sensorActivated + " that the sensor is activated.";
+    }
+
     public void sprayWater() {
         if(buttonPressed = true) {
             System.out.println("Water Sprayed");
@@ -61,9 +68,18 @@ public class WaterFountain {
     }
 
 
-    // Shoot water
-    // drop water
-    // meter increase
-    // humm
+    public boolean equals(WaterFountain otherWaterFountain) {
+        if(this.meter == otherWaterFountain.meter
+        && this.numButtons == otherWaterFountain.numButtons
+        && this.buttonPressed == otherWaterFountain.buttonPressed
+        && this.sensorActivated == otherWaterFountain.sensorActivated
+        && this.frame.equals(otherWaterFountain.frame)
+        && this.colors.equals(otherWaterFountain.colors)
+        && this.firstLetterOfObject == otherWaterFountain.firstLetterOfObject
+        ) {
+            return true;
+        }
+        return false;
+    }
 
 }
