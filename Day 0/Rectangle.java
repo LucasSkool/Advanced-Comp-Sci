@@ -2,43 +2,58 @@ public class Rectangle {
     private int length;
     private int width;
 
-    public Rectangle(){ //must match name of the class
+    public String toString() {
+        return "Rectangle: " + length + " x " + width;
+    }
+
+    public Rectangle() {
         length = 2;
         width = 1;
     }
 
-    public Rectangle(int inputLength, int inputWidth){
-        this.length = inputLength;
-        this.width = inputWidth;
+    public Rectangle(int newLength, int newWidth) {
+        this.length = newLength;
+        this.width = newWidth;
     }
-    public Rectangle(int squareSideLength){
+
+    public Rectangle(int squareSideLength) {
         this.length = squareSideLength;
         this.width = squareSideLength;
     }
 
-    public int getLength(){
+    public int getLength() {
         return length;
     }
 
-    public int getWidth(){
+    public int getWidth() {
         return width;
     }
 
     public void setLength(int newLength) {
         this.length = newLength;
     }
-    public void sedWidth(int newWidth) {
+
+    public void setWidth(int newWidth) {
         this.width = newWidth;
     }
 
-    public int calculateArea() {
-        return length*width;
+    public boolean equals(Rectangle other) {
+        if (this.length == other.getLength() && this.width == other.getWidth()) {
+            return true;
+        }
+        return false;
     }
-    public int calculatePerimeter() {
-        return (2*length) + (2*width);
+
+    public int getArea() {
+        return length * width;
     }
-    public double calculateDiagnol() {
-        return Math.sqrt((double)length*length + width*width);
+
+    public int getPerimeter() {
+        return (2 * length) + (2 * width);
+    }
+
+    public double getDiagonal() {
+        return Math.sqrt((double) length * length + width * width);
     }
 
 

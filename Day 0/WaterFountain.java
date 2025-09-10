@@ -63,8 +63,47 @@ public class WaterFountain {
         frame = "circle";
     }
 
-    public double getMeter(){
+    public double getMeter() {
         return meter;
+    }
+    public void setMeter(double newMeter) {
+        this.meter = newMeter;
+    }
+    public int getNumButtons() {
+        return this.numButtons;
+    }
+    public void setNumButtons(int newNumButtons) {
+        this.numButtons = newNumButtons;
+    }
+    public boolean getButtonPressed() {
+        return buttonPressed;
+    }
+    public void setButtonPressed(boolean buttonPressed) {
+        this.buttonPressed = buttonPressed;
+    }
+    public boolean getSensorActivated() {
+        return sensorActivated;
+    }
+    public void setSensorActivated(boolean sensorActivated) {
+        this.sensorActivated = sensorActivated;
+    }
+    public String getFrame() {
+        return frame;
+    }
+    public void setFrame(String newFrame) {
+        this.frame = newFrame;
+    }
+    public String getColors() {
+        return colors;
+    }
+    public void setColors(String newColors) {
+        this.colors = newColors;
+    }
+    public char getFirstLetterOfObject() {
+        return firstLetterOfObject;
+    }
+    public void setFirstLetterOfObject(char newLetter) {
+        this.firstLetterOfObject = newLetter;
     }
 
 
