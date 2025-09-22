@@ -1,37 +1,48 @@
 public class Student {
     
     private String name;
-    private int id1;
-    private int id2;
-    private String grade;
+    private String id;
+    private int grade;
+    private Student latestOpp;
+    private Student recentFriend;
 
-    public Student(String name, String grade) {
+    public Student(String name, int grade) {
         this.name = name;
-        this.id1 = 000;
-        this.id2 = 0000;
+        this.id = generateId();
         this.grade = grade;
     }
 
     public Student(String name) {
         this.name = name;
-        this.id1 = 000;
-        this.id2 = 0000;
-        this.grade = "10th";
+        this.id = generateId();
+        this.grade = 10;
+    }
+
+    public Student getLatestOpp() {
+        return latestOpp;
+    }
+
+    public Student getRecentFriend() {
+        return recentFriend;
+    }
+
+    public void setLatestOpp(Student latestOpp) {
+        this.latestOpp = latestOpp;
+    }
+
+    public void setRecentFriend(Student recentFriend) {
+        this.recentFriend = recentFriend;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getId1() {
-        return id1;
+    public String getId() {
+        return id;
     }
 
-    public int getId2() {
-        return id2;
-    }
-
-    public String getGrade() {
+    public int getGrade() {
         return grade;
     }
 
@@ -39,23 +50,54 @@ public class Student {
         this.name = name;
     }
 
-    public void setId(int id1, int id2) {
-        this.id1 = id1;
-        this.id2 = id2;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setGrade(String grade) {
+    public void setGrade(int grade) {
         this.grade = grade;
     }
 
     public String toString() {
-        return name + " is a " + grade + " grade student. Their ID is " + id1 + "-" + id2;
+        return name + " is a " + grade + " grade student. Their ID is " + id;
     }
 
     public boolean equals(Student other) {
-        if(this.name == other.getName() && this.id1 == other.getId1() && this.id2 == other.getId2() && this.grade == other.getGrade()) {
+        
+        if (this.name.equals(other.getName()) && this.id.equals(other.getId())
+            && this.grade == other.getGrade()) {
             return true;
         }
+
         return false;
     }
+
+    public String generateId() {
+        String firstPart = "";
+        String secondPart = "";
+
+        for (int i = 0; i < 3; i++) {
+            firstPart += (int) (Math.random() * 8 + 1);
+        }
+
+        for (int i = 0; i < 4; i++) {
+            secondPart += (int) (Math.random() * 10);
+        }
+
+        return "" + firstPart + "-" + secondPart;
+    }
+
+    public String vibeCheck(Student other) {
+        
+        if (latestOpp.equals(other.getLatestOpp())) {
+            this.recentFriend = other;
+            other.recentFriend = this;
+            return this.name + " and " + other.getName()
+                + " are now friends! They both dislike " + this.latestOpp + ".";
+        }
+
+        return this.name + " and " + other.getName()
+            + " did not become friends. They do not dislike the same person.";
+    }
+
 }
