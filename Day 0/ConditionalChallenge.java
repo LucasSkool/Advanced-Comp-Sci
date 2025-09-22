@@ -73,15 +73,15 @@ public class ConditionalChallenge {
         String size = "Small";
 
         if (number > 0) {
-            result = "Positive";
+            result2 = "Positive";
         }
         
         else if (number < 0) {
-            result = "Negative";
+            result2 = "Negative";
         }
 
         else if (number == 0) {
-            result = "Zero";
+            result2 = "Zero";
         }
 
         if(number > 100) {
@@ -92,7 +92,7 @@ public class ConditionalChallenge {
             size = "Very Negative";
         }
 
-        System.out.println("Number: " + number + ", Classification: " + result + ", Size: " + size);
+        System.out.println("Number: " + number + ", Classification: " + result2 + ", Size: " + size);
 
     }
 }
