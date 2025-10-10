@@ -1,17 +1,19 @@
 public class DogTester {
     public static void main(String[] args) {
         
-        System.out.println("--------------------------- Dog Part 1 ----------------------------");
+        System.out.println("--------------------------- Dog Day 1 ----------------------------");
         System.out.println("");
         
         Dog dog1 = new Dog();
         Dog dog2 = new Dog("Bobby", "Lucas", 4, 123);
         Dog dog3 = new Dog("Galaxy Destroyer", "Katelyn", 3, 234);
+       
+        
 
         System.out.println(dog1.getName());
         System.out.println(dog1.getOwnerName());
         System.out.println(dog1.getAge());
-        System.out.println(dog1.getDogID());
+        System.out.println(dog1.getDogId());
         System.out.println(dog1.getDogChar());
         System.out.println(dog1.getDogTag());
         System.out.println(dog1.isStillInFacility());
@@ -19,7 +21,7 @@ public class DogTester {
         System.out.println(dog3.getName());
         System.out.println(dog3.getOwnerName());
         System.out.println(dog3.getAge());
-        System.out.println(dog3.getDogID());
+        System.out.println(dog3.getDogId());
         System.out.println(dog3.getDogChar());
         System.out.println(dog3.getDogTag());
         System.out.println(dog3.isStillInFacility());
@@ -27,7 +29,7 @@ public class DogTester {
         System.out.println(dog2.getName());
         System.out.println(dog2.getOwnerName());
         System.out.println(dog2.getAge());
-        System.out.println(dog2.getDogID());
+        System.out.println(dog2.getDogId());
         System.out.println(dog2.getDogChar());
         System.out.println(dog2.getDogTag());
         System.out.println(dog2.isStillInFacility());
@@ -41,9 +43,9 @@ public class DogTester {
         System.out.println(PawesomeUtils.generateDogChar(123));
         System.out.println(PawesomeUtils.generateDogChar(693));
 
-        System.out.println("Dog tag for dog1: " + PawesomeUtils.generateDogTag(dog1.getDogID(), dog1.getDogChar()));
-        System.out.println("Dog tag for dog2: " + PawesomeUtils.generateDogTag(dog1.getDogID(), dog1.getDogChar()));
-        System.out.println("Dog tag for dog3: " + PawesomeUtils.generateDogTag(dog1.getDogID(), dog1.getDogChar()));
+        System.out.println("Dog tag for dog1: " + PawesomeUtils.generateDogTag(dog1.getDogId(), dog1.getDogChar()));
+        System.out.println("Dog tag for dog2: " + PawesomeUtils.generateDogTag(dog2.getDogId(), dog1.getDogChar()));
+        System.out.println("Dog tag for dog3: " + PawesomeUtils.generateDogTag(dog3.getDogId(), dog1.getDogChar()));
 
 
         System.out.println(dog1.toString());
@@ -58,12 +60,12 @@ public class DogTester {
         System.out.println(dog2.isStillInFacility());
 
         System.out.println("");
-        System.out.println("--------------------------- Dog Part 2 ----------------------------");
+        System.out.println("--------------------------- Dog Day 2 ----------------------------");
         System.out.println("");
 
         System.out.println(PawesomeUtils.generateDogChar(123)); //should be L
-        System.out.println(PawesomeUtils.generateDogChar(456)); // idk
-        System.out.println(PawesomeUtils.generateDogChar(789)); // idk
+        System.out.println(PawesomeUtils.generateDogChar(456)); // should be K
+        System.out.println(PawesomeUtils.generateDogChar(789)); // should be J
 
         System.out.println(PawesomeUtils.pickup(dog2, "Lucas"));
         System.out.println(PawesomeUtils.pickup(dog1, "Lucas"));
@@ -77,7 +79,7 @@ public class DogTester {
         System.out.println(dog3.getOwnerName());
 
         System.out.println("");
-        System.out.println("--------------------------- Dog Part 3 ----------------------------");
+        System.out.println("--------------------------- Dog Day 3 ----------------------------");
         System.out.println("");
 
         System.out.println(PawesomeUtils.validateDogId(429)); //should print 429
@@ -97,6 +99,17 @@ public class DogTester {
         System.out.println(PawesomeUtils.validateDogTag(dog6));
         //should print false
 
+        System.out.println("");
+        System.out.println("--------------------------- Dog Day 4 ----------------------------");
+        System.out.println("");
+
+        System.out.println("dog1 age to human: " + PawesomeUtils.convertAgeToHumanAge(dog1));
+        System.out.println("dog2 age to human: " + PawesomeUtils.convertAgeToHumanAge(dog2));
+        System.out.println("dog3 age to human: " + PawesomeUtils.convertAgeToHumanAge(dog3));
+
+        System.out.println("Human age 12 to dog years: " + PawesomeUtils.convertAgeToDogYears(12));
+        System.out.println("Human age 21 to dog years: " + PawesomeUtils.convertAgeToDogYears(21));
+        System.out.println("Human age 67 to dog years: " + PawesomeUtils.convertAgeToDogYears(67));
 
     }
 }

@@ -2,7 +2,7 @@ public class Dog {
     private String name;
     private String ownerName;
     private int age;
-    private int dogID;
+    private int dogId;
     private char dogChar;
     private String dogTag;
     private boolean stillInFacility;
@@ -11,9 +11,9 @@ public class Dog {
         this.name = name;
         this.ownerName = ownerName;
         this.age = age;
-        this.dogID = dogId;
-        this.dogChar = PawesomeUtils.generateDogChar(this.dogID);
-        this.dogTag = PawesomeUtils.generateDogTag(this.dogID, this.dogChar);
+        this.dogId = PawesomeUtils.validateDogId(dogId);
+        this.dogChar = PawesomeUtils.generateDogChar(PawesomeUtils.validateDogId(this.dogId));
+        this.dogTag = PawesomeUtils.generateDogTag(PawesomeUtils.validateDogId(this.dogId), this.dogChar);
         this.stillInFacility = true;
     }
 
@@ -21,65 +21,80 @@ public class Dog {
         this.name = "Max";
         this.ownerName = "Bill";
         this.age = 1;
-        this.dogID = 000;
-        this.dogChar = PawesomeUtils.generateDogChar(this.dogID);
-        this.dogTag = PawesomeUtils.generateDogTag(this.dogID, this.dogChar);
+        this.dogId = PawesomeUtils.validateDogId(678);
+        this.dogChar = PawesomeUtils.generateDogChar(PawesomeUtils.validateDogId(this.dogId));
+        this.dogTag = PawesomeUtils.generateDogTag(PawesomeUtils.validateDogId(this.dogId), this.dogChar);
         this.stillInFacility = true;
     }
 
     public String getName() {
         return name;
     }
+    
     public String getOwnerName() {
         return ownerName;
     }
+    
     public int getAge() {
         return age;
     }
-    public int getDogID() {
-        return dogID;
+    
+    public int getDogId() {
+        return dogId;
     }
+    
     public char getDogChar() {
         return dogChar;
     }
+    
     public String getDogTag() {
         return dogTag;
     }
+    
     public boolean isStillInFacility() {
         return stillInFacility;
     }
+    
     public void setName(String name) {
         this.name = name;
     }
+    
     public void setOwnerName(String ownerName) {
         this.ownerName = ownerName;
     }
+    
     public void setAge(int age) {
         this.age = age;
     }
-    public void setDogID(int dogId) {
-        this.dogID = dogId;
+    
+    public void setDogId(int dogId) {
+        this.dogId = PawesomeUtils.validateDogId(dogId);
+        this.dogChar = PawesomeUtils.generateDogChar(dogId);
+        this.dogTag = PawesomeUtils.generateDogTag(this.dogId, this.dogChar);
     }
+    
     public void setDogChar(char dogChar) {
         this.dogChar = dogChar;
     }
+    
     public void setDogTag(String dogTag) {
         this.dogTag = dogTag;
     }
+    
     public void setStillInFacility(boolean stillInFacility) {
         this.stillInFacility = stillInFacility;
     }
 
     public String toString() {
         return (name + " is a(n) " + age + " year old dog, and their owner is "
-            + ownerName + ". Their 3 digit dog ID is " + dogID + ", their dog character is "
+            + ownerName + ". Their 3 digit dog ID is " + dogId + ", their dog character is "
             + dogChar + ", and their dog tag says " + dogTag + ". Currently, it is " + stillInFacility
             + " that they are in the facility.");
     }
 
     public boolean equals(Dog other) {
         return (this.name.equals(other.name) && this.ownerName.equals(other.ownerName)
-            && this.age == other.age && this.dogID == other.dogID && this.dogChar == other.dogChar
+            && this.age == other.age && this.dogId == other.dogId && this.dogChar == other.dogChar
             && this.dogTag.equals(other.dogTag) && this.stillInFacility == other.stillInFacility);
     }
 
