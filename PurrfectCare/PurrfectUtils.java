@@ -28,7 +28,7 @@ public class PurrfectUtils {
         for (int i = 0; i < 4; i++) {
             sum += (int) newCatId.charAt(i);
         }
-        int result = (int) sum%26;
+        int result = sum%26;
         result += 'A';
         return (char) result;
     }
