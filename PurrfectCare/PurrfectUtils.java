@@ -17,16 +17,22 @@ public class PurrfectUtils {
     }
 
     public static char generateCatChar(String catId) {
-        String newCatId = catId.substring(0, 4); //takes first 4 digits of the parameter
-        
-        // if (Integer.parseInt(catId) < 1000 || Integer.parseInt(catId) > 9999) {
-            
-        // } 
-        // I'm not sure if this is the way it should be, instructions aren't clear enough
         int sum = 0;
         
+        // If catId length < 4 exception:
+        if (catId.length() < 3) {
+            for (int i = 0; i < catId.length(); i++) {
+                sum += ((int) (catId.charAt(i)) - '0');
+            }
+            int result = sum%26;
+            result += 'A';
+            return (char) result;
+        }
+
+        String newCatId = catId.substring(0, 4); //takes first 4 digits of the parameter
+        
         for (int i = 0; i < 4; i++) {
-            sum += (int) newCatId.charAt(i);
+            sum += ((int) (newCatId.charAt(i)) - '0');
         }
         int result = sum%26;
         result += 'A';

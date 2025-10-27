@@ -1,14 +1,7 @@
 public class CatTester {
     
     public static void main(String[] args) {
-        // private String name;
-        // private String ownerName;
-        // private int moodLevel;
-        // private String catId;
-        // private char catChar;
-        // private boolean isHungry;
 
-        
         Cat cat1 = new Cat("hmm", "idk", 0, "1234");
 
         System.out.println();
@@ -52,7 +45,8 @@ public class CatTester {
 
         PurrfectUtils.feed(cat1);
 
-
+        // System.out.println(PurrfectUtils.generateCatChar("1234"));
+        // Testing generateCarChat() method 
 
     }
 
