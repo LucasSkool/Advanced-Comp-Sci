@@ -24,12 +24,15 @@ public class Pool {
     public String getName() {
         return name;
     }
+    
     public String getOwnerName() {
         return ownerName;
     }
+    
     public String getUsername() {
         return username;
     }
+    
     public int getCleanlinessLevel() {
         return cleanlinessLevel;
     }
@@ -37,18 +40,23 @@ public class Pool {
     public boolean isNeedsChemicalCheck() {
         return needsChemicalCheck;
     }
+    
     public void setName(String name) {
         this.name = name;
     }
+    
     public void setOwnerName(String ownerName) {
         this.ownerName = PoolUtils.fixName(ownerName);
     }
+    
     public void setUsername(String username) {
         this.username = username;
     }
+    
     public void setCleanlinessLevel(int cleanlinessLevel) {
         this.cleanlinessLevel = PoolUtils.validateCleanlinessLevel(cleanlinessLevel);
     }
+    
     public void setNeedsChemicalCheck(boolean needsChemicalCheck) {
         this.needsChemicalCheck = needsChemicalCheck;
     }
