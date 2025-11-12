@@ -9,9 +9,17 @@ public class ArrayOps {
      * @return The constructed string representation of the array.
      */
     public static String printStringArray(String[] array) {
+        if (array.length < 1) {
+            return "[]";
+        } // I may not have fully understood tesl5 in the autograder, but I added this because of it
+        
         String result = "[";
         for (int i = 0; i < array.length; i++) {
-            result += array[i] + ", ";
+            if (array[i] != null) {
+                result += array[i] + ", ";
+            } else {
+                result += "null, ";
+            }
         }
         result = result.substring(0, result.length() - 2) + "]";
         System.out.println(result);
@@ -85,12 +93,18 @@ public class ArrayOps {
      */
     public static double averageStringLength(String[] array) {
         int total = 0;
+        int numOfNullsFound = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] != null) {
                 total += array[i].length();
+            } else {
+                numOfNullsFound++;
             }
         }
-        return (double) total / array.length;
+        if (total == 0) {
+            return 0.0;
+        } //basically an exception if all strings are nulls
+        return (double) total / (array.length - numOfNullsFound);
     }
 
     /**
@@ -114,7 +128,8 @@ public class ArrayOps {
         int [] frequencies = new int[26];
         // 'A' = 65
         for (int i = 0; i < input.length(); i++) {
-            if (((int) Character.toUpperCase(input.charAt(i))) - 65 >= 0 && ((int) Character.toUpperCase(input.charAt(i))) - 65 <= 25) {
+            if (((int) Character.toUpperCase(input.charAt(i))) - 65 >= 0
+                && ((int) Character.toUpperCase(input.charAt(i))) - 65 <= 25) {
                 frequencies[((int) Character.toUpperCase(input.charAt(i))) - 65]++;
             }
         }
@@ -180,7 +195,13 @@ public class ArrayOps {
 
         for (int i = 0; i < array.length; i++) {
             if (array[i] != null) {
-                array[i] = "#" + i + " " + array[i] + ", ";
+                array[i] = "#" + i + " " + array[i];
+                
+                // if (i == array.length - 1) {
+                //     array[i] = "#" + i + " " + array[i];
+                // } else {
+                //     array[i] = "#" + i + " " + array[i] + ", ";
+                // }
             }
         }
         return array;
@@ -195,7 +216,19 @@ public class ArrayOps {
      * @return The reversed array
      */
     public static int[] reverseIntArray(int[] array) {
-        return new int[0];
+        if (array == null) {
+            return new int[0];
+        } //null exception
+
+        int [] newArray = new int[array.length];
+
+        int newArrayIndex = 0;
+        for (int i = array.length - 1; i >= 0; i--) {
+            newArray[newArrayIndex] = array[i];
+            newArrayIndex++;
+        }
+
+        return newArray;
     }
 
 }
