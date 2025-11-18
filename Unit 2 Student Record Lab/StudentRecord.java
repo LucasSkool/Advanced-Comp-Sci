@@ -68,7 +68,7 @@ public class StudentRecord {
     public double getAverage(int first, int last) {
         int sum = 0;
         int numCount = 0;
-        for (int i = first; i <= last; i++) { // i  don't know if this should be <= or <
+        for (int i = first; i <= last; i++) {
             sum += scores[i];
             numCount++;
         }
@@ -88,7 +88,7 @@ public class StudentRecord {
     
     public int getTestScore(int testNumber) {
         if (testNumber < 0 || testNumber > scores.length - 1) {
-            return -1; //IDK IF THIS IS WHAT THEY WANT
+            return -1;
         }
         
         return scores[testNumber];
