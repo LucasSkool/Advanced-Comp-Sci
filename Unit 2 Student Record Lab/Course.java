@@ -8,6 +8,11 @@ public class Course {
         this.enrolledStudents = enrolledStudents;
     }
 
+    public Course(String courseName, int maxEnrollment) {
+        this.courseName = courseName;
+        this.enrolledStudents = new StudentRecord[maxEnrollment];
+    }
+
     public String getCourseName() {
         return courseName;
     }
@@ -51,5 +56,53 @@ public class Course {
         }
 
         return (double) sum / enrolledStudents.length;
+    }
+
+    public boolean isFull() {
+        for (int i = 0; i < enrolledStudents.length; i++) {
+            if (enrolledStudents[i] == null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void enrollStudent(StudentRecord student) {
+        
+        boolean foundSeat = false;
+        for (int i = 0; i < enrolledStudents.length && !foundSeat; i++) {
+            if (enrolledStudents[i] == null) {
+                enrolledStudents[i] = student;
+                foundSeat = true;
+            }
+        }
+    }
+
+    public boolean dropStudent(StudentRecord student) {
+        for (int i = 0; i < enrolledStudents.length; i++) {
+            if (enrolledStudents[i] != null && enrolledStudents[i].equals(student)) {
+                enrolledStudents[i] = null;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int countEnrolledStudents() {
+        int count = 0;
+        for (int i = 0; i < enrolledStudents.length; i++) {
+            if (enrolledStudents[i] != null) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public void increaseClassSizeBy(int sizeIncrease) {
+        StudentRecord[] newClass = new StudentRecord[enrolledStudents.length + sizeIncrease];
+        for (int i = 0; i < enrolledStudents.length; i++) {
+            newClass[i] = enrolledStudents[i];
+        }
+        enrolledStudents = newClass;
     }
 }
