@@ -14,13 +14,12 @@ public class RPSGame {
         player.setName(name);
         player.setChoice(choice);
     }
-    
+
     public void start() {
         Scanner scan = new Scanner(System.in);
-        
-        System.out.println("Please enter your name: " );
+
+        System.out.println("Please enter your name: ");
         String name = scan.nextLine();
-        
 
         String input = "";
         for (int i = 1; i < 4; i++) {
@@ -33,9 +32,10 @@ public class RPSGame {
                 System.out.println("You cannot choose that. (Attempts Remaining: " + (3 - i) + ")");
             }
         }
-        this.setPlayerValues(name, input); //do I need the "this"???
-        
-        //scan.close(); //this just kept giving me issues regarding closing the scanner and stuff
+        this.setPlayerValues(name, input); // do I need the "this"???
+
+        // scan.close(); //this just kept giving me issues regarding closing the scanner
+        // and stuff
     }
 
     public boolean didPlayerWin() {
@@ -67,20 +67,18 @@ public class RPSGame {
 
     }
 
-
-
     public static boolean validateChoice(String choice) {
         if (choice.equals("rock")
-            || choice.equals("paper")
-            || choice.equals("scissors")) {
-                return true;
+                || choice.equals("paper")
+                || choice.equals("scissors")) {
+            return true;
         }
         return false;
     }
 
     public static String generateRandomChoice() {
         int randomInt = (int) (Math.random() * 3);
-        String [] choices = {"rock", "paper", "scissors"};
+        String[] choices = { "rock", "paper", "scissors" };
         return choices[randomInt];
     }
 }
