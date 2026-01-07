@@ -14,7 +14,7 @@ public class Unit3Exercises {
             
             
             if (strs.length - nullCount == 0) {
-                throw new ArithmeticException("Something went wrong");
+                throw new ArithmeticException("There are no actual Strings, all indexes are null");
             } else {
                 return sum / (strs.length - nullCount);
             }
@@ -95,5 +95,93 @@ public class Unit3Exercises {
         return sum;
     }
 
+    //task 6
+    public static int calculateSumOfSquares(int[] numbers) {
+        
+        int sum = 0;
+        
+        try {
+            for (int i = 0; i < numbers.length; i++) {
+                sum += Math.pow(numbers[i], 2);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            throw new IllegalArgumentException("The array is null");
+        }
+        return sum;
+
+        // I made for loop starting number 0 b/c it's used as an index, and added an
+        // exception catcher
+    }
+
+    //task 7
+    public static int getNthFibonacci(int n) {
+        if (n == 1) {
+            return n;
+        } //changed this to only n == 1
+
+        if (n < 1) {
+            throw new IllegalArgumentException("BAD INPUT");
+        } //added negative/0 input exception
+
+        int a = 0, b = 1, c;
+        for (int i = 2; i <= n; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        return b;
+    }
+
+    //task 8
+    public static void sortArrayDecending(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[i]) {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }     //I didn't change anything and it seems to work thank god
+    }
+
+    //task 9
+    public static String findLongestWord(String sentence) {
+        if (sentence == null) {
+            throw new IllegalArgumentException("the String is null");
+        } //added null String exception
+        
+        
+        String[] words = sentence.split(" ");
+        String longestWord = "";
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() >= longestWord.length()) {
+                longestWord = words[i];
+            }
+        }
+        return longestWord;
+    }
+
+    //task 10
+    public static double calculateInterest(double principal, double rate, int years) {
+        if (principal <= 0) {
+            throw new IllegalArgumentException("Cannot have a principal of 0 or less");
+        }
+
+        if (rate < 0) {
+            throw new IllegalArgumentException("You probably don't want a negative rate");
+        }
+
+        if (years < 0) {
+            throw new IllegalArgumentException("Time only goes one way (years cannot be negative");
+        }
+
+        for (int i = 0; i < years; i++) {
+            principal += principal * (rate / 100);
+        }
+        return principal;
+        //added exceptions for illegal numbers for the 3 input variables
+    }
 
 }

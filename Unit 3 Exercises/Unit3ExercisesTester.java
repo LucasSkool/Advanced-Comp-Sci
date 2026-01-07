@@ -37,7 +37,71 @@ public class Unit3ExercisesTester {
         testExample12();
         testExample13();
         testExample14();
-   
+
+        System.out.println("-----------Task6-----------");
+        testExample15();
+        System.out.println();
+        try {
+            testExample16();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("-----------Task7-----------");
+        testExample17();
+        System.out.println();
+        try {
+            testExample18();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("-----------Task8-----------");
+        testExample19();
+        try {
+            testExample20();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+        testExample21();
+
+        System.out.println("-----------Task9-----------");
+        testExample22();
+
+        try {
+            testExample23();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("-----------Task10-----------");
+        testExample24();
+        System.out.println();
+
+        try {
+            testExample25();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+        
+        try {
+            testExample26();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+        
+        try {
+            testExample27();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
     }
 
     public static void testExample1() {
@@ -127,5 +191,83 @@ public class Unit3ExercisesTester {
     public static void testExample14() {
         int[] nums = {};
         System.out.println(Unit3Exercises.sumEvenNumbers(nums));
+    }
+
+
+    //task 6
+
+    public static void testExample15() {
+        int[] nums = {1, 2, 3, 4};
+        System.out.println(Unit3Exercises.calculateSumOfSquares(nums));
+    }
+
+    public static void testExample16() {
+        int[] nums = null;
+        System.out.println(Unit3Exercises.calculateSumOfSquares(nums));
+    }
+
+    //task 7
+    public static void testExample17() {
+        System.out.println(Unit3Exercises.getNthFibonacci(4));
+        //not sure the definition of "Nth"
+    }
+
+    public static void testExample18() {
+        System.out.println(Unit3Exercises.getNthFibonacci(-1));
+    }
+
+    //task 8
+    public static void testExample19() {
+        int[] arr = {3, 9, 4, 5, 10};
+        Unit3Exercises.sortArrayDecending(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i] + ", ");
+        }
+    }
+
+    public static void testExample21() {
+        int[] arr = {3, -9, 4, 5, -10};
+        Unit3Exercises.sortArrayDecending(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + ", ");
+        }
+        System.out.println();
+    }
+
+    public static void testExample20() {
+        int[] arr = null;
+        Unit3Exercises.sortArrayDecending(arr);
+        /*for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + ", ");
+        } */
+        //got rid of this because it made a yellow squiggly
+        System.out.println();
+    }
+
+
+    //task 9
+    public static void testExample22() {
+        System.out.println(Unit3Exercises.findLongestWord("I do not have a cat"));
+    }
+
+    public static void testExample23() {
+        System.out.println(Unit3Exercises.findLongestWord(null));
+    }
+
+    //task 10
+    public static void testExample24() {
+        System.out.println(Unit3Exercises.calculateInterest(10000, 3.5, 5));
+    }
+    
+    public static void testExample25() {
+        System.out.println(Unit3Exercises.calculateInterest(-10000, 3.5, 5));
+    }
+
+    public static void testExample26() {
+        System.out.println(Unit3Exercises.calculateInterest(10000, -3.5, 5));
+    }
+
+    public static void testExample27() {
+        System.out.println(Unit3Exercises.calculateInterest(10000, 3.5, -5));
     }
 }
