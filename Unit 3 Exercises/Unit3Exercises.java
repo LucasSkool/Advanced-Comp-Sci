@@ -1,117 +1,112 @@
 public class Unit3Exercises {
     public static double calculateAverageStringLength(String[] strs) {
-        try {
-            int sum = 0;
-            int nullCount = 0;
-            for (int i = 0; i < strs.length; i++) {
-                try {
-                    sum += strs[i].length();
-                } catch (Exception e) {
-                    System.out.println("This string is null");
-                    nullCount++;
-                }
+        int sum = 0;
+        int counted = 0;
+        int i = 0;
+        while (i < strs.length) {
+
+            if (strs[i] != null) {
+                sum += strs[i].length();
+                counted++;
             }
-            
-            
-            if (strs.length - nullCount == 0) {
-                throw new ArithmeticException("There are no actual Strings, all indexes are null");
-            } else {
-                return sum / (strs.length - nullCount);
-            }
-            
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return 0.0;
+
+            i++;
         }
-   
+
+        return sum / counted;
+        //didn't really change anything I don't think...
     }
 
     public static String reverseString(String str) {
-        String reversed = "";
         
-        try {
-
-            for (int i = str.length() - 1; i >= 0; i--) {
+        if (str == null) {
+            throw new IllegalArgumentException("String is null");
+        }
+        
+        String reversed = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
                 reversed += str.charAt(i);
-            }
-
-        } catch (Exception e) {
-            System.out.println("String is likely null");
         }
         
         return reversed;
+        // if statement for null Strings, and rewrote the whole code because the
+        // given code seemed too inefficient
     }
 
     public static int findMaxValue(int [] numbers) {
         int max = 0;
 
-        try {
-            max = numbers[0];
-            if (numbers.length > 1) {
-                for (int i = 1; i < numbers.length; i++) {
-                    if (numbers[i] > max) {
-                        max = numbers[i];
-                    }
-                }
-            }
-
-        } catch (Exception e) {
-            System.out.println("Integer array is likely null / empty.");
+        if (numbers == null || numbers.length < 1) {
+            throw new IllegalArgumentException("integer array is null / empty");
         }
-        
+
+        max = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+        }
+
         return max;
 
-        //It returns momentary max, but I don't know how to just return nothing
+        //I kinda just rewrote the code because the code just seems excessive.
+        // added an if statement for a null or empty array, which is dealt with
+        // with try-catch blocks in tester
     }
 
     public static boolean isPalindrome(String str) {
-        String reversedString = Unit3Exercises.reverseString(str);
-        //exception already handled in reverseString method
-
-        try {
-            if (str.toLowerCase().equals(reversedString.toLowerCase()) && str.length() != 0) {
-                return true;
-            } //last part of if statement assumes an empty string is not a palindrome, but idk
-        } catch (Exception e) {
-            System.out.println("Something went wrong:");
-            System.out.println(e.getMessage());
+        if (str == null) {
+            throw new IllegalArgumentException("String is null");
         }
+        
+        String reversedString = Unit3Exercises.reverseString(str);
+
+        if (str.toLowerCase().equals(reversedString.toLowerCase()) && str.length() != 0) {
+            return true;
+        } //last part of if statement assumes an empty string is not a palindrome, but idk
 
         return false;
+        //I just rewrote the entire code using the reverse method we wrote earlier
+        // added an if statement for the edge case of if the String is null
     }
 
     public static int sumEvenNumbers(int[] numbers) {
         int sum = 0;
-        try {
-            for (int i = 0; i < numbers.length; i++) {
-                if (numbers[i] % 2 == 0) { //if number is even
-                    sum += numbers[i];
-                }
+
+        if (numbers == null || numbers.length < 1) {
+            throw new IllegalArgumentException("int array is either null or empty");
+        }
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 == 0) { //if number is even
+                sum += numbers[i];
             }
-        } catch (Exception e) {
-            System.out.println("integer array is likely null");
         }
 
         return sum;
+        //rewrote the code again because I did not understand the else statements
+        //is it supposed to be confusing???
+        //why would the result be the length if sum == 0???
+        //I just didn't include that cuz it didn't make sense
+        // added if statement for 2 edge cases
     }
+
 
     //task 6
     public static int calculateSumOfSquares(int[] numbers) {
         
+        if (numbers == null || numbers.length < 1) {
+            throw new IllegalArgumentException("integer array is either null or empty");
+        } 
+
         int sum = 0;
-        
-        try {
-            for (int i = 0; i < numbers.length; i++) {
-                sum += Math.pow(numbers[i], 2);
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            throw new IllegalArgumentException("The array is null");
+        for (int i = 0; i < numbers.length; i++) {
+            sum += Math.pow(numbers[i], 2);
         }
         return sum;
 
-        // I made for loop starting number 0 b/c it's used as an index, and added an
-        // exception catcher
+        // all I did was add an if statement to throw an exception if the array
+        // was empty or null
     }
 
     //task 7
@@ -184,4 +179,86 @@ public class Unit3Exercises {
         //added exceptions for illegal numbers for the 3 input variables
     }
 
+
+    //"try catch" blocks started being required in these ones in the instructions
+    //task 11
+    public static int parsePositiveInteger(String str) {
+        
+        int number = Integer.parseInt(str);
+        
+        //negative number exception
+        try {
+            if (number < 0) {
+                
+                throw new NumberFormatException("parsed number is negative");
+            }
+        } catch (Exception e) {
+            return 1;
+        }
+        return number;
+        //Just added an if statement if the number was negative to throw an exception
+    }
+
+    //task 12
+    public static String getArrayElement(String[] arr,int index) {
+        try { 
+            return arr[index];
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+        //As instructed, I put the original code in a try-catch and made the
+        //method return null if it caught
+    }
+
+    //task 13
+    public static double calculateSquareRoot(int number) {
+        try {
+            if (number < 0) {
+                throw new IllegalArgumentException("cannot square root negative numbers");
+            }
+        } catch (Exception e) {
+            return Double.NaN;
+        }
+        
+        return Math.sqrt(number);
+        //implemented the try-catch with an if statement to handle if
+        //the number was negative, and added the Double.NaN as instructed
+    }
+
+    //task 14
+    public static int sumArrayElements(int[] array) {
+        try {
+            int sum = 0;
+            for (int i = 0; i < array.length; i++) {
+                sum += array[i];
+            }
+            return sum;
+        } catch (Exception e) {
+            System.out.println("array was likely null");
+            return 0;
+        }
+        //implemented try-catch as instructed, printed a message in catch,
+        // and returned 0 if that exception happened
+    }
+
+    //task 15
+    public static double calculatePower(double base, int exponent) {
+
+        try {
+            if (exponent < 0) {
+                throw new IllegalArgumentException("apparently cannot have negative exponents..");
+                
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return 1.0;
+        }
+        
+        return Math.pow(base, exponent);
+
+        //implemented the try-catch blocks, added if statement in try block that
+        //threw an expection if exponent was negative, returned 1 in the catch
+        //block
+    }
 }

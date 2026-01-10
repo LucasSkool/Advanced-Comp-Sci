@@ -1,45 +1,167 @@
 public class Unit3ExercisesTester {
     public static void main(String[] args) {
 
+        //I know my tester code is really long because of all the try-catch blocks,
+        // and that the instructions told me to combine each task into one
+        // "test task _" method. But I didn't see that.
+
         System.out.println("-----------Task1-----------");
-        testExample1();
-        System.out.println();
-        testExample2();
-        System.out.println();
-        testExample2diff();
+        try {
+            testExample1();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        try {
+            testExample2();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         System.out.println();
 
-        System.out.println("-----------Task2-----------");
-        testExample3();
+        try {
+            testExample2diff();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
         System.out.println();
-        testExample4();
+        
+
+        System.out.println("-----------Task2-----------");
+        
+        try {
+            testExample3();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println();
+
+        try {
+            testExample4();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         System.out.println();
 
         System.out.println("-----------Task3-----------");
-        testExample5();
-        System.out.println();
-        testExample6();
-        System.out.println();
-        testExample6diff();
+        
+        try {
+            testExample5();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            testExample5diff();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            testExample6();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            testExample6diff();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    
         System.out.println();
 
         System.out.println("-----------Task4-----------");
-        testExample7();
+        try {
+            testExample7();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
         System.out.println();
-        testExample8();
+
+        try {
+            testExample8();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
         System.out.println();
-        testExample9();
+
+        try {
+            testExample9();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println();
+
+        try {
+            testExample9diff();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
         System.out.println();
 
         System.out.println("-----------Task5-----------");
-        testExample10();
-        testExample11();
-        testExample12();
-        testExample13();
-        testExample14();
+        try {
+            testExample10();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            testExample11();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            testExample12();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            testExample13();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            testExample14();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    
 
         System.out.println("-----------Task6-----------");
-        testExample15();
+        
+        try {
+            testExample15();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
         System.out.println();
         try {
             testExample16();
@@ -47,6 +169,15 @@ public class Unit3ExercisesTester {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
+        System.out.println();
+        try {
+            testExample16diff();
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
 
         System.out.println("-----------Task7-----------");
         testExample17();
@@ -102,8 +233,119 @@ public class Unit3ExercisesTester {
             System.out.println(e.getMessage());
         }
         System.out.println();
+
+        System.out.println("-----------Task11-----------");
+        try {
+            testExample28();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+        try {
+            testExample29();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+        try {
+            testExample30();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+        System.out.println("-----------Task12-----------");
+        try {
+            testExample31();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+        try {
+            testExample32();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+        try {
+            testExample33();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+        try {
+            testExample34();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+
+        System.out.println("-----------Task13-----------");
+        try {
+            testExample35();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+        try {
+            testExample36();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+        System.out.println("-----------Task14-----------");
+        try {
+            testExample37();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+        try {
+            testExample38();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+        System.out.println("-----------Task15-----------");
+
+        try {
+            testExample39();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+        try {
+            testExample40();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+    //task 1
     public static void testExample1() {
 
         String[] names = {"lol", "lolol"};
@@ -113,7 +355,7 @@ public class Unit3ExercisesTester {
 
     public static void testExample2() {
 
-        String[] names = {};
+        String[] names = null;
         System.out.println(Unit3Exercises.calculateAverageStringLength(names));
         //should return 0
     }
@@ -123,6 +365,9 @@ public class Unit3ExercisesTester {
         System.out.println(Unit3Exercises.calculateAverageStringLength(names));
         //expected 5.0
     }
+
+
+    //task 2
 
     public static void testExample3() {
         String uhoh = null;
@@ -134,8 +379,16 @@ public class Unit3ExercisesTester {
         System.out.println(Unit3Exercises.reverseString(name));
     }
 
+
+    //task 3
+
     public static void testExample5() {
         int[] array = {-1, 2, -5, 3};
+        System.out.println(Unit3Exercises.findMaxValue(array));
+    }
+
+    public static void testExample5diff() {
+        int[] array = {-1, 0, -5, 3};
         System.out.println(Unit3Exercises.findMaxValue(array));
     }
 
@@ -148,6 +401,8 @@ public class Unit3ExercisesTester {
         int[] array = {};
         System.out.println(Unit3Exercises.findMaxValue(array));
     }
+
+    //task 4
 
     public static void testExample7() {
         String name = "Lucas";
@@ -164,9 +419,17 @@ public class Unit3ExercisesTester {
     public static void testExample9() {
         String anull = null;
         System.out.println(Unit3Exercises.isPalindrome(anull));
-        //should print true
+        //should get exceptioned
     }
 
+    public static void testExample9diff() {
+        String anull = "";
+        System.out.println(Unit3Exercises.isPalindrome(anull));
+        //should print false
+    }
+
+
+    //task 5
 
     public static void testExample10() {
         int[] nums = {2, 2, 4, 5, 7};
@@ -197,12 +460,17 @@ public class Unit3ExercisesTester {
     //task 6
 
     public static void testExample15() {
-        int[] nums = {1, 2, 3, 4};
+        int[] nums = {1, -2, 3, 4};
         System.out.println(Unit3Exercises.calculateSumOfSquares(nums));
     }
 
     public static void testExample16() {
         int[] nums = null;
+        System.out.println(Unit3Exercises.calculateSumOfSquares(nums));
+    }
+
+    public static void testExample16diff() {
+        int[] nums = {};
         System.out.println(Unit3Exercises.calculateSumOfSquares(nums));
     }
 
@@ -269,5 +537,80 @@ public class Unit3ExercisesTester {
 
     public static void testExample27() {
         System.out.println(Unit3Exercises.calculateInterest(10000, 3.5, -5));
+    }
+
+    //task 11
+    public static void testExample28() {
+        System.out.println(Unit3Exercises.parsePositiveInteger("32"));
+    }
+
+    public static void testExample29() {
+        System.out.println(Unit3Exercises.parsePositiveInteger("-2"));
+    }
+
+    public static void testExample30() {
+        System.out.println(Unit3Exercises.parsePositiveInteger("notanumba"));
+    }
+
+    //task 12
+    public static void testExample31() {
+        String[] arr = {"Hello", "Goodbye", "Flip off"};
+        int index = 1;
+        System.out.println(Unit3Exercises.getArrayElement(arr, index));
+    }
+
+    public static void testExample32() {
+        String[] arr = {"Hello", null, "Flip off"};
+        int index = 1;
+        System.out.println(Unit3Exercises.getArrayElement(arr, index));
+    }
+
+    public static void testExample33() {
+        String[] arr = null;
+        int index = 2;
+        System.out.println(Unit3Exercises.getArrayElement(arr, index));
+    }
+
+    public static void testExample34() {
+        String[] arr = {"Hello", "yeah", "Flip off"};
+        int index = 3;
+        System.out.println(Unit3Exercises.getArrayElement(arr, index));
+    }
+
+    //task 13
+
+    public static void testExample35() {
+        int number = 4;
+        System.out.println(Unit3Exercises.calculateSquareRoot(number));
+    }
+
+    public static void testExample36() {
+        int number = -2;
+        System.out.println(Unit3Exercises.calculateSquareRoot(number));
+    }
+
+    //task 14
+
+    public static void testExample37() {
+        int[] array = {1, 2, 3, 4};
+        System.out.println(Unit3Exercises.sumArrayElements(array));
+    }
+
+    public static void testExample38() {
+        int[] array = null;
+        System.out.println(Unit3Exercises.sumArrayElements(array));
+    }
+
+    //task 15
+    public static void testExample39() {
+        double base = 2;
+        int exponent = 2;
+        System.out.println(Unit3Exercises.calculatePower(base, exponent));
+    }
+
+    public static void testExample40() {
+        double base = 2;
+        int exponent = -2;
+        System.out.println(Unit3Exercises.calculatePower(base, exponent));
     }
 }
