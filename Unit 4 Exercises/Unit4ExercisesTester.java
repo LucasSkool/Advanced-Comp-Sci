@@ -1,7 +1,7 @@
 public class Unit4ExercisesTester {
     public static void main (String[] args) {
         
-        //all of these tests are just the example ones in the instruction page except the last one in fizzBuzz
+        //all of these tests are just copies of the example ones in the instruction page except the last one in fizzBuzz
         
         System.out.println();
         System.out.println("\n----------------- METHOD 1 TESTS -----------------\n");
