@@ -7,7 +7,7 @@ public class DebugDemo {
         } catch (Exception e) {
             System.out.println("Parser scenario blew up: " + e.getMessage());
         }
-
+        
         try {
             runAverageScenario();
         } catch (Exception e) {
